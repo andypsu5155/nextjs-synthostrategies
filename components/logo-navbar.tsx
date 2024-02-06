@@ -18,7 +18,7 @@ export default function LogoNavbar() {
             <li key={index}>
               <Link
                 href={link.href}
-                className="capitalize bg-blue-300 hover:bg-blue-400 p-5 rounded-xl transition-all"
+                className="capitalize bg-blue-300 hover:bg-blue-400 p-2 sm:p-5 rounded-xl transition-all"
               >
                 {link.name}
               </Link>

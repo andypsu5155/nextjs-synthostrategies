@@ -4,12 +4,7 @@ import Image from "next/image";
 
 export default function WhatWeDo() {
   return (
-    <div className="p-10 flex flex-col items-center w-full relative text-white">
-      <Image
-        src={image2}
-        alt=""
-        className="w-full absolute top-0 left-0 h-[60vh] object-cover -z-10 brightness-[30%]"
-      />
+    <div className="p-10 flex flex-col items-center w-full relative text-white bg-black">
       <h1 className="text-5xl font-bold mb-3">What We Do:</h1>
       <p className="text-xl indent-7">
         At SynthoStrategies, we specialize in crafting tailored solutions that
@@ -18,6 +13,7 @@ export default function WhatWeDo() {
         digital landscape. Our expert team combines deep industry knowledge with
         advanced AI capabilities to deliver the following key services:
       </p>
+      <Image src={image2} alt="" className="w-[50%] 2xl:w-[12%] mx-auto mt-5" />
       <h2 className="text-2xl font-bold mt-8">
         AI-Integrated Web Development:
       </h2>
