@@ -11,40 +11,57 @@ export default function WhatWeDo() {
         digital landscape. Our expert team combines deep industry knowledge with
         advanced AI capabilities to deliver the following key services:
       </p>
-      <h2 className="text-2xl font-bold mt-8">AI Strategy Synthesis:</h2>
+      <h2 className="text-2xl font-bold mt-8">
+        AI-Integrated Web Development:
+      </h2>
       <p className="text-xl indent-7">
-        We work closely with your team to understand your unique challenges and
-        goals, synthesizing AI strategies that align with your business
-        objectives. Our approach ensures that AI is seamlessly integrated into
-        your operations to maximize efficiency and productivity.
+        Leverage our expertise in crafting responsive, user-friendly websites
+        and applications that are not just visually appealing but smart. By
+        integrating AI into web development, we offer personalized user
+        experiences, advanced analytics for behavior tracking, and automated
+        content management systems. This service ensures your digital presence
+        is powerful, effective, and tailored to meet the evolving needs of your
+        audience.
+      </p>
+      <h2 className="text-2xl font-bold mt-6">AI Strategy Synthesis:</h2>
+      <p className="text-xl indent-7">
+        We deepen our collaboration with your team to align AI and web
+        technologies with your business objectives, ensuring a seamless
+        integration that maximizes efficiency, engagement, and productivity
+        across all digital fronts.
       </p>
       <h2 className="text-2xl font-bold mt-6">E-commerce Optimization:</h2>
       <p className="text-xl indent-7">
-        Elevate your e-commerce business with our AI-driven solutions. From
-        personalized recommendations and inventory management to pricing
-        optimization, we help you enhance the customer experience and boost
-        sales.
-      </p>
-      <h2 className="text-2xl font-bold mt-6">Customer Service Chatbots:</h2>
-      <p className="text-xl indent-7">
-        Our AI-powered chatbots are designed to provide exceptional customer
-        support across various industries, including e-commerce,
-        telecommunications, and banking. Streamline your customer interactions
-        and improve satisfaction rates.
-      </p>
-      <h2 className="text-2xl font-bold mt-6">Retail Inventory Management:</h2>
-      <p className="text-xl indent-7">
-        Optimize your inventory levels, demand forecasting, and store layout
-        planning with our AI solutions tailored for retailers. Minimize costs,
-        reduce waste, and enhance your supply chain efficiency.
+        Our enhanced e-commerce solutions now encompass advanced web development
+        techniques and AI-driven tools for an unbeatable online shopping
+        experience. From AI-based chat support and personalized shopping
+        recommendations to dynamic pricing models, we help you captivate and
+        retain customers.
       </p>
       <h2 className="text-2xl font-bold mt-6">
-        Entertainment and Content Creation:
+        Customized Customer Service Solutions:
       </h2>
       <p className="text-xl indent-7">
-        Collaborate with us to automate content recommendation, video editing,
-        and content generation using AI. Transform your media and entertainment
-        processes for greater efficiency and creativity.
+        Including AI-powered chatbots and interactive web interfaces, our
+        customer service solutions are designed to deliver immediate,
+        personalized support, improving customer satisfaction and loyalty.
+      </p>
+      <h2 className="text-2xl font-bold mt-6">
+        Retail and Inventory Management:
+      </h2>
+      <p className="text-xl indent-7">
+        Optimize your online and physical store operations with our AI and web
+        development solutions. Enjoy features like real-time inventory tracking,
+        predictive analytics for demand forecasting, and an optimized online
+        shopping interface.
+      </p>
+      <h2 className="text-2xl font-bold mt-6">
+        Entertainment and Web Content Creation:
+      </h2>
+      <p className="text-xl indent-7">
+        Collaborate with us to leverage AI for automating content creation and
+        to develop dynamic, content-rich web platforms that engage and entertain
+        your audience, ensuring they keep coming back for more.
       </p>
     </div>
   );
