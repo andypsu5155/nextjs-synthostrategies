@@ -7,8 +7,8 @@ export default function WhatWeDo() {
       <p className="text-xl indent-7">
         At SynthoStrategies, we specialize in crafting tailored solutions that
         strategically integrate AI automation into your business processes,
-        enabling you to stay competitive in today's rapidly evolving digital
-        landscape. Our expert team combines deep industry knowledge with
+        enabling you to stay competitive in today&apos;s rapidly evolving
+        digital landscape. Our expert team combines deep industry knowledge with
         advanced AI capabilities to deliver the following key services:
       </p>
       <h2 className="text-2xl font-bold mt-8">AI Strategy Synthesis:</h2>
