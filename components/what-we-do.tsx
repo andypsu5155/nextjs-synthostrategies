@@ -1,8 +1,15 @@
 import React from "react";
+import image2 from "../public/images/image2-lq.webp";
+import Image from "next/image";
 
 export default function WhatWeDo() {
   return (
-    <div className="p-10 flex flex-col items-center bg-slate-700 w-full">
+    <div className="p-10 flex flex-col items-center w-full relative text-white">
+      <Image
+        src={image2}
+        alt=""
+        className="w-full absolute top-0 left-0 h-[60vh] object-cover -z-10 brightness-[30%]"
+      />
       <h1 className="text-5xl font-bold mb-3">What We Do:</h1>
       <p className="text-xl indent-7">
         At SynthoStrategies, we specialize in crafting tailored solutions that
