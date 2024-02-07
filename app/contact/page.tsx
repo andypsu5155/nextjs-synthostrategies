@@ -22,6 +22,7 @@ export default function Contact() {
       }),
     });
   };
+
   return (
     <>
       <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] bg-slate-900 text-slate-100">

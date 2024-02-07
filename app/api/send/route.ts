@@ -3,9 +3,19 @@ import { Resend } from "resend";
 import * as React from "react";
 import { NextApiRequest } from "next";
 
+interface ExtendedNextApiRequest extends NextApiRequest {
+  body: {
+    data: {
+      name: string;
+      email: string;
+      message: string;
+    };
+  };
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request: { json: () => Promise<any> }) {
+export async function POST(request: { json: () => any }) {
   try {
     const body = await request.json();
     const { name, email, message } = body.data;
