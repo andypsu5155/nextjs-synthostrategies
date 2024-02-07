@@ -1,6 +1,9 @@
 "use client";
 
 import ContactUs from "@/components/contact-us";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import React, { useState } from "react";
 
 export default function Contact() {
@@ -30,7 +33,7 @@ export default function Contact() {
         <form className="flex flex-col gap-3" onSubmit={sendEmail}>
           <div className="flex flex-col">
             <label>Name:</label>
-            <input
+            <Input
               type="text"
               placeholder="Name"
               value={data.name}
@@ -40,7 +43,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-col">
             <label>Email:</label>
-            <input
+            <Input
               type="email"
               placeholder="Email"
               value={data.email}
@@ -50,16 +53,19 @@ export default function Contact() {
           </div>
           <div className="flex flex-col">
             <label>Message:</label>
-            <textarea
+            <Textarea
               placeholder="Message"
               value={data.message}
               onChange={(e) => setData({ ...data, message: e.target.value })}
-              className="text-black p-1"
+              className="text-black p-1 height-[300px]"
             />
           </div>
-          <button className="bg-blue-300 hover:bg-blue-400 p-5 text-white w-[300px] rounded-xl transition-all">
+          <Button
+            className="bg-blue-600 hover:bg-blue-700 w-[300px]"
+            type="submit"
+          >
             Submit
-          </button>
+          </Button>
         </form>
       </section>
       <ContactUs />
