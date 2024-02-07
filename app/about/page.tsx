@@ -4,7 +4,10 @@ import React from "react";
 export default function About() {
   return (
     <>
-      <section id="about" className="px-5 py-5 bg-slate-900 text-slate-100">
+      <section
+        id="about"
+        className="px-5 sm:px-[20%] py-5 bg-slate-900 text-slate-100"
+      >
         <h1 className="">About SynthoStrategies</h1>
         <div id="mission">
           <h2 className="!mt-5">Our Mission</h2>
