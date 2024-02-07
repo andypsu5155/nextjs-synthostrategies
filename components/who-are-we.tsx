@@ -5,8 +5,8 @@ import image1 from "../public/images/image1-lq.webp";
 export default function WhoAreWe() {
   return (
     <div className=" flex flex-col items-center p-3 2xl:py-[5rem] text-slate-100 w-full relative bg-slate-900 2xl:bg-transparent">
-      <h1 className="text-5xl font-bold mb-3">Who are we?</h1>
-      <p className="text-xl indent-7">
+      <h1 className="">Who are we?</h1>
+      <p className="">
         SynthoStrategies is a dynamic AI automation and web development agency
         dedicated to propelling businesses across diverse industries into the
         future. Our mission is to empower organizations by blending cutting-edge
