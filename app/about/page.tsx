@@ -3,7 +3,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div>
+    <>
       <section id="about" className="px-5 py-5 bg-slate-900 text-slate-100">
         <h1 className="">About SynthoStrategies</h1>
         <div id="mission">
@@ -38,13 +38,13 @@ export default function About() {
           <ul>
             <li>
               <strong>Innovation at the Core:</strong> Innovation is not just a
-              buzzword for us; it's the foundation of everything we do. We are
-              constantly exploring new technologies, methodologies, and
+              buzzword for us; it&apos;s the foundation of everything we do. We
+              are constantly exploring new technologies, methodologies, and
               strategies to keep our clients ahead of the curve.
             </li>
             <li>
               <strong>Tailored Solutions:</strong> We understand that each
-              business is unique. That's why we specialize in creating
+              business is unique. That&apos;s why we specialize in creating
               customized solutions that perfectly align with your business
               objectives, ensuring seamless integration and maximum impact.
             </li>
@@ -99,6 +99,6 @@ export default function About() {
         </div>
       </section>
       <ContactUs />
-    </div>
+    </>
   );
 }
