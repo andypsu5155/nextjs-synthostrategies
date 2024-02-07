@@ -27,7 +27,7 @@ export default function LogoNavbar() {
         </ul>
       </nav>
 
-      <p className="text-slate-700 text-xl text-center italic">
+      <p className="text-slate-700 text-sm sm:text-xl text-center italic">
         Collaborate with Us to Synthesize AI Success and Strategic Excellence!
       </p>
     </div>
