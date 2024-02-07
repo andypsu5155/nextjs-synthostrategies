@@ -1,5 +1,10 @@
 import ContactUs from "@/components/contact-us";
 import React from "react";
+import cityscapesImage from "@/public/images/cityscape.webp";
+import coolAiImage from "@/public/images/coolai.webp";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
   return (
@@ -11,30 +16,44 @@ export default function About() {
         <h1 className="">About SynthoStrategies</h1>
         <div id="mission">
           <h2 className="!mt-5">Our Mission</h2>
-          <p>
-            At SynthoStrategies, we are on a mission to revolutionize the way
-            businesses interact with the digital world. We believe in the
-            transformative power of artificial intelligence and its capacity to
-            redefine web development, making digital experiences more intuitive,
-            efficient, and engaging. Our goal is to empower organizations across
-            various industries to navigate the digital landscape with ease and
-            innovation, driving success and establishing a competitive edge in
-            their respective fields.
-          </p>
+          <div className="flex flex-col 2xl:flex-row gap-5 mt-5">
+            <Image
+              src={cityscapesImage}
+              alt="Image of cityscape"
+              className="w-[200px] mx-auto 2xl:mx-0"
+            />
+            <p>
+              At SynthoStrategies, we are on a mission to revolutionize the way
+              businesses interact with the digital world. We believe in the
+              transformative power of artificial intelligence and its capacity
+              to redefine web development, making digital experiences more
+              intuitive, efficient, and engaging. Our goal is to empower
+              organizations across various industries to navigate the digital
+              landscape with ease and innovation, driving success and
+              establishing a competitive edge in their respective fields.
+            </p>
+          </div>
         </div>
         <div id="who-we-are">
           <h2 className="!mt-5">Who We Are</h2>
-          <p>
-            SynthoStrategies is a leading AI automation and web development
-            agency, committed to delivering forward-thinking solutions and
-            strategic excellence. Founded by a team of visionaries and
-            technologists, we have a passion for blending cutting-edge web
-            technologies with advanced AI strategies. Our expertise spans across
-            crafting responsive, user-friendly websites, developing
-            AI-integrated applications, optimizing e-commerce platforms, and
-            beyond. We are dedicated to propelling businesses into the future,
-            ensuring they thrive in the rapidly evolving digital age.
-          </p>
+          <div className="flex flex-col 2xl:flex-row gap-5 mt-5">
+            <p>
+              SynthoStrategies is a leading AI automation and web development
+              agency, committed to delivering forward-thinking solutions and
+              strategic excellence. Founded by a team of visionaries and
+              technologists, we have a passion for blending cutting-edge web
+              technologies with advanced AI strategies. Our expertise spans
+              across crafting responsive, user-friendly websites, developing
+              AI-integrated applications, optimizing e-commerce platforms, and
+              beyond. We are dedicated to propelling businesses into the future,
+              ensuring they thrive in the rapidly evolving digital age.
+            </p>
+            <Image
+              src={coolAiImage}
+              alt="Image of cool AI"
+              className="w-[200px] mx-auto 2xl:mx-0"
+            />
+          </div>
         </div>
         <div id="what-sets-us-apart">
           <h2 className="!mt-5">What Sets Us Apart</h2>
@@ -96,9 +115,17 @@ export default function About() {
             Embark on a journey of digital transformation with SynthoStrategies.
             Let us synthesize the strategies that will drive your business
             forward into a future of enhanced efficiency, profitability, and
-            competitiveness. Contact us today to discover how we can help you
-            achieve AI-powered success.
+            competitiveness.
           </p>
+          <h3 className="mt-5 mb-2">
+            Contact us today to discover how we can help you achieve AI-powered
+            success.
+          </h3>
+          <Link href="/contact" className="">
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              Contact Us Now!
+            </Button>
+          </Link>
         </div>
       </section>
       <ContactUs />
