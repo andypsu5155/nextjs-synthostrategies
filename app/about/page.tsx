@@ -3,7 +3,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <>
+    <div>
       <section id="about" className="px-5 py-5 bg-slate-900 text-slate-100">
         <h1 className="">About SynthoStrategies</h1>
         <div id="mission">
@@ -99,6 +99,6 @@ export default function About() {
         </div>
       </section>
       <ContactUs />
-    </>
+    </div>
   );
 }
