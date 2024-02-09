@@ -15,6 +15,7 @@
     "embla-carousel-react": "^8.0.0-rc22",
     "lucide-react": "^0.323.0",
     "next": "14.1.0",
+    "openai": "^4.26.1",
     "react": "^18",
     "react-dom": "^18",
     "resend": "^3.1.0",
