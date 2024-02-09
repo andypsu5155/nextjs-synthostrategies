@@ -33,9 +33,7 @@ export async function POST(req: any) {
 
     // Error handling for the OpenAI endpoint
     if (createChatCompletionRes.status !== 200) {
-      let error = new ChatCompletionError(
-        "Create chat completion request was unsuccessful."
-      );
+      let error = new Error("Create chat completion request was unsuccessful.");
       error.statusCode = createChatCompletionRes.status;
       error.body = createChatCompletionResBody;
       throw error;
