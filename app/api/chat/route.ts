@@ -14,8 +14,6 @@ export async function POST(req: any) {
       messages,
     };
 
-    console.log("made it this far route1");
-
     // Sending our request using the Fetch API
     const createChatCompletionRes = await fetch(
       createChatCompletionEndpointURL,
@@ -34,8 +32,6 @@ export async function POST(req: any) {
     // Error handling for the OpenAI endpoint
     if (createChatCompletionRes.status !== 200) {
       let error = new Error("Create chat completion request was unsuccessful.");
-      error.statusCode = createChatCompletionRes.status;
-      error.body = createChatCompletionResBody;
       throw error;
     }
 
@@ -64,10 +60,7 @@ export async function POST(req: any) {
     // Error handling
 
     // Server-side error logging
-    console.log(`Thrown error: ${error.message}
-  Status code: ${error.statusCode}
-  Error: ${JSON.stringify(error.body)}
-  `);
+    console.log(error);
 
     // Sending an unsuccessful response for our endpoint
     const reply = {
@@ -75,9 +68,6 @@ export async function POST(req: any) {
       content: "An error has occurred.",
     };
 
-    return new Response(JSON.stringify({ error: { reply } }), {
-      status: error.statusCode || "500",
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(JSON.stringify({ error: { reply } }));
   }
 }
