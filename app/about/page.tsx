@@ -1,3 +1,5 @@
+"use client";
+
 import ContactUs from "@/components/contact-us";
 import React from "react";
 import cityscapesImage from "@/public/images/cityscape.webp";
@@ -5,6 +7,7 @@ import coolAiImage from "@/public/images/coolai.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -13,8 +16,20 @@ export default function About() {
         id="about"
         className="px-5 sm:px-[20%] py-5 bg-slate-900 text-slate-100"
       >
-        <h1 className="">About SynthoStrategies</h1>
-        <div id="mission">
+        <motion.h1
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.05 }}
+          className=""
+        >
+          About SynthoStrategies
+        </motion.h1>
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.1 }}
+          id="mission"
+        >
           <h2 className="!mt-5">Our Mission</h2>
           <div className="flex flex-col 2xl:flex-row gap-5 mt-5">
             <Image
@@ -33,8 +48,13 @@ export default function About() {
               establishing a competitive edge in their respective fields.
             </p>
           </div>
-        </div>
-        <div id="who-we-are">
+        </motion.div>
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.15 }}
+          id="who-we-are"
+        >
           <h2 className="!mt-5">Who We Are</h2>
           <div className="flex flex-col 2xl:flex-row gap-5 mt-5">
             <p>
@@ -54,8 +74,13 @@ export default function About() {
               className="w-[200px] mx-auto 2xl:mx-0"
             />
           </div>
-        </div>
-        <div id="what-sets-us-apart">
+        </motion.div>
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          id="what-sets-us-apart"
+        >
           <h2 className="!mt-5">What Sets Us Apart</h2>
           <ul>
             <li>
@@ -92,7 +117,7 @@ export default function About() {
               measurable outcomes for your business.
             </li>
           </ul>
-        </div>
+        </motion.div>
         <div id="our-services">
           <h2 className="!mt-5">Our Services</h2>
           <p>

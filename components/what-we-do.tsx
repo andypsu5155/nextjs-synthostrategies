@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import image2 from "../public/images/image2-lq.webp";
 import Image from "next/image";
@@ -8,19 +10,39 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { motion } from "framer-motion";
 
 export default function WhatWeDo() {
   return (
     <div className="p-10 flex flex-col items-center w-full relative text-white bg-black">
-      <h1 className="">What We Do:</h1>
-      <p className="">
+      <motion.h1
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.2 }}
+        className=""
+      >
+        What We Do:
+      </motion.h1>
+      <motion.p
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.25 }}
+        className=""
+      >
         At SynthoStrategies, we specialize in crafting tailored solutions that
         strategically integrate AI automation into your business processes,
         enabling you to stay competitive in today&apos;s rapidly evolving
         digital landscape. Our expert team combines deep industry knowledge with
         advanced AI capabilities to deliver the following key services:
-      </p>
-      <Image src={image2} alt="" className="w-[50%] 2xl:w-[12%] mx-auto mt-5" />
+      </motion.p>
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className="w-[50%] 2xl:w-[12%] mx-auto mt-5"
+      >
+        <Image src={image2} alt="" />
+      </motion.div>
 
       <Carousel className="w-[90%] mx-auto mt-5">
         <CarouselContent>

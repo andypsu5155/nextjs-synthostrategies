@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [data, setData] = useState({
@@ -29,9 +30,20 @@ export default function Contact() {
   return (
     <>
       <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] bg-slate-900 text-slate-100">
-        <h1>Contact Us:</h1>
+        <motion.h1
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.05 }}
+        >
+          Contact Us:
+        </motion.h1>
         <form className="flex flex-col gap-3" onSubmit={sendEmail}>
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.1 }}
+            className="flex flex-col"
+          >
             <label>Name:</label>
             <Input
               type="text"
@@ -40,8 +52,13 @@ export default function Contact() {
               onChange={(e) => setData({ ...data, name: e.target.value })}
               className="text-black p-1"
             />
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.15 }}
+            className="flex flex-col"
+          >
             <label>Email:</label>
             <Input
               type="email"
@@ -50,8 +67,13 @@ export default function Contact() {
               onChange={(e) => setData({ ...data, email: e.target.value })}
               className="text-black p-1"
             />
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            className="flex flex-col"
+          >
             <label>Message:</label>
             <Textarea
               placeholder="Message"
@@ -59,13 +81,19 @@ export default function Contact() {
               onChange={(e) => setData({ ...data, message: e.target.value })}
               className="text-black p-1 height-[300px]"
             />
-          </div>
-          <Button
-            className="bg-blue-600 hover:bg-blue-700 w-[300px]"
-            type="submit"
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.25 }}
           >
-            Submit
-          </Button>
+            <Button
+              className="bg-blue-600 hover:bg-blue-700 w-[300px]"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </motion.div>
         </form>
       </section>
       <ContactUs />
