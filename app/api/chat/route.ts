@@ -1,54 +1,25 @@
+import OpenAI from "openai";
+
+const openai = new OpenAI();
+
 // Logic for the ChatGPT-powered `/api/chat` endpoint
 export async function POST(req: any) {
   try {
     // Processing the request body
     const { messages } = await req.json();
 
-    // Sending a request to the OpenAI create chat completion endpoint
-
-    // Setting parameters for our request
-    const createChatCompletionEndpointURL =
-      "https://api.openai.com/v1/chat/completions";
-    const createChatCompletionReqParams = {
+    const completion = await openai.chat.completions.create({
+      messages: messages,
       model: "gpt-3.5-turbo",
-      messages,
-    };
+    });
 
-    // Sending our request using the Fetch API
-    const createChatCompletionRes = await fetch(
-      createChatCompletionEndpointURL,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + process.env.OPENAI_API_KEY,
-        },
-        body: JSON.stringify(createChatCompletionReqParams),
-      }
-    );
-
-    const createChatCompletionResBody = await createChatCompletionRes.json();
-
-    // Error handling for the OpenAI endpoint
-    if (createChatCompletionRes.status !== 200) {
-      let error = new Error("Create chat completion request was unsuccessful.");
-      throw error;
-    }
-
-    // Properties on the response body
-    const reply = createChatCompletionResBody.choices[0].message;
-    const usage = createChatCompletionResBody.usage;
+    const reply = completion.choices[0].message;
 
     // Logging the results
     console.log(`Create chat completion request was successful. Results:
   Replied message: 
   
   ${JSON.stringify(reply)}
-  
-  Token usage:
-  Prompt: ${usage.prompt_tokens}
-  Completion: ${usage.completion_tokens}
-  Total: ${usage.total_tokens}
   `);
 
     // Sending a successful response for our endpoint

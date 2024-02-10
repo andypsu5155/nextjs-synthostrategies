@@ -26,7 +26,7 @@ export default function HiddenPage() {
   // `onSubmit` event handler fired when the user submits a new message
   const onSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    console.log("made it this far");
+
     setMessages([...messages, { role: "user", content: newMessageText }]);
 
     setLoadingStatus(true);
