@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import LogoNavbar from "@/components/logo-navbar";
+import { MessagesProvider } from "@/context/messages-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-blue-300 relative`}>
         <LogoNavbar />
         <main className="flex min-h-screen flex-col items-center">
-          {children}
+          <MessagesProvider>{children}</MessagesProvider>
         </main>
       </body>
     </html>

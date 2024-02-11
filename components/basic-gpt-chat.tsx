@@ -1,19 +1,13 @@
 "use client";
 
+import { useMessagesContext } from "@/context/messages-context";
 import React, { useEffect } from "react";
 import { useState } from "react";
 
 export default function BasicGPTChat() {
-  // State variables
-  const [messages, setMessages] = useState([
-    {
-      role: "system",
-      content: "You are a chatbot that is helpful and replies concisely",
-    },
-  ]); // An array of the messages that make up the chat
-
   const [newMessageText, setNewMessageText] = useState("");
   const [loadingStatus, setLoadingStatus] = useState(false);
+  const { messages, addMessage } = useMessagesContext();
 
   // `onChange` event handler to update `newMessageText` as the user types
   const onChange = (event: { target: { value: any } }) => {
@@ -24,7 +18,7 @@ export default function BasicGPTChat() {
   const onSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    setMessages([...messages, { role: "user", content: newMessageText }]);
+    addMessage({ role: "user", content: newMessageText });
 
     setLoadingStatus(true);
     setNewMessageText("");
@@ -53,7 +47,7 @@ export default function BasicGPTChat() {
       const reply =
         response.status === 200 ? responseBody.reply : responseBody.error.reply;
 
-      setMessages([...messages, reply]);
+      addMessage(reply);
     } catch {
       // Catch and handle any unexpected errors
       const reply = {
@@ -61,7 +55,7 @@ export default function BasicGPTChat() {
         content: "An error has occured.",
       };
 
-      setMessages([...messages, reply]);
+      addMessage(reply);
     }
     // Set `setLoadingStatus` to false
     setLoadingStatus(false);
