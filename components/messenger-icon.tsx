@@ -1,21 +1,38 @@
 "use client";
 
-import { MessageSquareText } from "lucide-react";
-import Link from "next/link";
+import { MessageSquareText, XCircle } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
+import BasicGPTChat from "./basic-gpt-chat";
 
 export default function MessengerIcon() {
+  const [isOpened, setIsOpened] = React.useState(false);
+
+  const animateProps = isOpened
+    ? { x: -5, y: -30, opacity: 1 } // Adjusted y value for when isOpened is true
+    : { x: -10, y: -10, opacity: 1 };
+
   return (
     <motion.div
-      className="fixed bottom-4 right-4"
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      className="fixed bottom-0 right-0"
+      initial={{ x: -10, y: 30, opacity: 0 }} // Different initial state
+      animate={animateProps}
+      transition={{ duration: 0.25 }}
     >
-      <Link href="/hidden-page">
-        <MessageSquareText className="w-12 h-12 text-white bg-black rounded-full p-2" />
-      </Link>
+      {isOpened ? (
+        <>
+          <XCircle
+            className="absolute top-1 right-6 z-10 w-12 h-12 text-white bg-black rounded-full p-2"
+            onClick={() => setIsOpened(!isOpened)}
+          />
+          <BasicGPTChat />
+        </>
+      ) : (
+        <MessageSquareText
+          className="w-12 h-12 text-white bg-black rounded-full p-2"
+          onClick={() => setIsOpened(!isOpened)}
+        />
+      )}
     </motion.div>
   );
 }
