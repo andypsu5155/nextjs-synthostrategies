@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import MessengerIcon from "@/components/messenger-icon";
 
 export default function About() {
   return (
@@ -118,7 +119,12 @@ export default function About() {
             </li>
           </ul>
         </motion.div>
-        <div id="our-services">
+        <motion.div
+          id="our-services"
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.25 }}
+        >
           <h2 className="!mt-5">Our Services</h2>
           <p>
             From AI-integrated web development to customized customer service
@@ -133,8 +139,13 @@ export default function About() {
             <li>Retail and Inventory Management</li>
             <li>Entertainment and Web Content Creation</li>
           </ul>
-        </div>
-        <div id="join-us">
+        </motion.div>
+        <motion.div
+          id="join-us"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
           <h2 className="!mt-5">Join Us</h2>
           <p className="">
             Embark on a journey of digital transformation with SynthoStrategies.
@@ -151,9 +162,10 @@ export default function About() {
               Contact Us Now!
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </section>
       <ContactUs />
+      <MessengerIcon />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import MessengerIcon from "@/components/messenger-icon";
 
 export default function Contact() {
   const [data, setData] = useState({
@@ -41,7 +42,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] bg-slate-900 text-slate-100">
+      <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] w-full bg-slate-900 text-slate-100">
         {emailSent === false ? (
           <>
             <motion.h1
@@ -191,6 +192,7 @@ export default function Contact() {
         )}
       </section>
       <ContactUs />
+      <MessengerIcon />
     </>
   );
 }

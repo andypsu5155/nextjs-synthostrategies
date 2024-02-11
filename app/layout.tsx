@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import LogoNavbar from "@/components/logo-navbar";
-import { MessageSquareText } from "lucide-react";
-import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-blue-300`}>
+      <body className={`${inter.className} bg-blue-300 relative`}>
         <LogoNavbar />
-        {children}
-
-        <Link href="/hidden-page">
-          <MessageSquareText className=" fixed bottom-4 right-4 w-12 h-12 text-white bg-black rounded-full p-2" />
-        </Link>
+        <main className="flex min-h-screen flex-col items-center">
+          {children}
+        </main>
       </body>
     </html>
   );
