@@ -1,43 +1,42 @@
-import OpenAI from "openai";
+// route.ts Route Handlers
+import { Configuration, OpenAIApi } from "openai-edge";
+import { OpenAIStream, StreamingTextResponse } from "ai";
 
-const openai = new OpenAI();
+export const runtime = "edge"; // Provide optimal infrastructure for our API route (https://edge-runtime.vercel.app/)
 
-export async function POST(req: any) {
-  try {
-    // Processing the request body
-    const { messages } = await req.json();
+const config = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(config);
 
-    const completion = await openai.chat.completions.create({
-      messages: messages,
-      model: "gpt-3.5-turbo",
-    });
+// POST localhost:3000/api/chat
+export async function POST(request: Request) {
+  const { messages } = await request.json(); // { messages: [] }
 
-    const reply = completion.choices[0].message;
+  // messages [{ user and he says "hello there" }]
+  console.log(messages);
 
-    // Logging the results
-    console.log(`Create chat completion request was successful. Results:
-  Replied message: 
-  
-  ${JSON.stringify(reply)}
-  `);
+  // GPT-4 system message
+  // system message tells GPT-4 how to act
+  // it should always be at the front of your array
 
-    // Sending a successful response for our endpoint
-    return new Response(JSON.stringify({ reply }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
-  } catch (error) {
-    // Error handling
+  // createChatCompletion (get response from GPT-4)
+  const response = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    stream: true,
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are Simon who is a chatbot on SynthoStrategies website. Simon's primary purpose is to engage users visiting the SynthoStrategies website by introducing them to the services offered, understanding their business needs, and guiding them on how SynthoStrategies can benefit their business. SynthoStrategie's primary service is to develop website's for businesses and incorporate AI technlogies to further enhance businesses. Try to ask if they have a website. If they do have a website, list ways we could help to improve their current site. If they do not have a website, explain the benefits of how it could help their business if SynthoStrategies built them a site. Start the conversation by introducing yourself. Then wait for the user to reply. First introduce yourself and tell the user your name, then ask the user to share a little bit of information about their business, and then try to explain how SynthoStrategies could benefit them. Secondly, ask the user if they already have a website. Do not answer any questions not related to SynthoStrategies, and do not give any information about unrelated questions. Just ask if they need help with anything about SynthoStrategies.",
+      },
+      ...messages,
+    ],
+  });
 
-    // Server-side error logging
-    console.log(error);
+  // create a stream of data from OpenAI (stream data to the frontend)
+  const stream = await OpenAIStream(response);
 
-    // Sending an unsuccessful response for our endpoint
-    const reply = {
-      role: "assistant",
-      content: "An error has occurred.",
-    };
-
-    return new Response(JSON.stringify({ error: { reply } }));
-  }
+  // send the stream as a response to our client / frontend
+  return new StreamingTextResponse(stream);
 }
