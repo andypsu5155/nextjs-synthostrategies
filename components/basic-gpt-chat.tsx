@@ -4,7 +4,7 @@ import { useMessagesContext } from "@/context/messages-context";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
-import Simon from "@/public/images/simon.webp";
+import Simon from "@/public/images/simon-cropped.webp";
 import Image from "next/image";
 
 export default function BasicGPTChat() {
@@ -69,9 +69,9 @@ export default function BasicGPTChat() {
       <section className="h-[85vh] w-[95vw] mx-auto bg-white relative p-10 rounded-xl border-[2px] border-slate-900">
         <div className="flex gap-3 items-center justify-center">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage src="https://www.synthostrategies.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsimon.2bded0b8.webp&w=1080&q=75" />
           </Avatar>
-          <Image src={Simon} alt="Simon" />
+          <Image src={Simon} alt="Simon" width={100} height={100} />
           <h1 className="text-center text-2xl font-bold text-blue-500">
             Chat with Simon from SynthoStrategies
           </h1>
