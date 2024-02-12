@@ -4,8 +4,6 @@ import { useMessagesContext } from "@/context/messages-context";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
-import Simon from "@/public/images/simon-cropped.webp";
-import Image from "next/image";
 
 export default function BasicGPTChat() {
   const [newMessageText, setNewMessageText] = useState("");
@@ -66,18 +64,17 @@ export default function BasicGPTChat() {
 
   return (
     <>
-      <section className="h-[85vh] w-[95vw] mx-auto bg-white relative p-10 rounded-xl border-[2px] border-slate-900">
-        <div className="flex gap-3 items-center justify-center">
+      <section className="h-[85vh] w-[95vw] mx-auto bg-white bg-opacity-60 backdrop-blur-lg relative p-10 rounded-xl border-[2px] border-slate-900">
+        <div className="h-[10%] flex gap-3 items-center justify-center">
           <Avatar>
-            <AvatarImage src="https://www.synthostrategies.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsimon.2bded0b8.webp&w=1080&q=75" />
+            <AvatarImage src="https://raw.githubusercontent.com/andypsu5155/nextjs-synthostrategies/main/public/images/simon-cropped.webp" />
           </Avatar>
-          <Image src={Simon} alt="Simon" width={100} height={100} />
-          <h1 className="text-center text-2xl font-bold text-blue-500">
+          <h1 className="text-center text-lg sm:text-2xl font-bold text-blue-500">
             Chat with Simon from SynthoStrategies
           </h1>
         </div>
 
-        <div>
+        <div className="overflow-y-scroll h-[70%] sm:h-[75%]">
           {messages.slice(1).map((message, index) => (
             <div className="mx-2 my-4" key={index.toString()}>
               <p className="font-bold">
@@ -90,7 +87,7 @@ export default function BasicGPTChat() {
         </div>
 
         <div
-          className="absolute w-full bottom-0 left-0 z-20
+          className="w-full h-[20%] sm:h-[15%]
                      "
         >
           <form className="flex flex-col gap-2 p-2" onSubmit={onSubmit}>
@@ -100,7 +97,7 @@ export default function BasicGPTChat() {
                          focus:outline-none"
               value={newMessageText}
               onChange={onChange}
-              placeholder="Why is the sky blue?"
+              placeholder="Enter a message..."
             />
 
             <button
