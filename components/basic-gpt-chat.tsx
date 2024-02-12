@@ -3,6 +3,9 @@
 import { useMessagesContext } from "@/context/messages-context";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Avatar, AvatarImage } from "./ui/avatar";
+import Simon from "@/public/images/simon.webp";
+import Image from "next/image";
 
 export default function BasicGPTChat() {
   const [newMessageText, setNewMessageText] = useState("");
@@ -64,31 +67,21 @@ export default function BasicGPTChat() {
   return (
     <>
       <section className="h-[85vh] w-[95vw] mx-auto bg-white relative p-10 rounded-xl border-[2px] border-slate-900">
-        <div className="">
+        <div className="flex gap-3 items-center justify-center">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+          </Avatar>
+          <Image src={Simon} alt="Simon" />
           <h1 className="text-center text-2xl font-bold text-blue-500">
-            GPT Chatbot
+            Chat with Simon from SynthoStrategies
           </h1>
         </div>
 
-        {messages.length === 1 && (
-          <div className="flex justify-center">
-            <div>
-              <p className="mb-2 font-bold">
-                GPT Chatbot is a basic chatbot built with the OpenAI API,
-                Next.js and Tailwind CSS
-              </p>
-              <p className="mb-32">
-                To start a conversation, type a message below and hit send
-              </p>
-            </div>
-          </div>
-        )}
-
         <div>
-          {messages.map((message, index) => (
+          {messages.slice(1).map((message, index) => (
             <div className="mx-2 my-4" key={index.toString()}>
               <p className="font-bold">
-                {message.role === "assistant" ? "GPT Chatbot" : "You"}
+                {message.role === "assistant" ? "Simon" : "You"}
               </p>
 
               {message.content}

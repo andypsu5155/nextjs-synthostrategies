@@ -2,7 +2,6 @@ import OpenAI from "openai";
 
 const openai = new OpenAI();
 
-// Logic for the ChatGPT-powered `/api/chat` endpoint
 export async function POST(req: any) {
   try {
     // Processing the request body
