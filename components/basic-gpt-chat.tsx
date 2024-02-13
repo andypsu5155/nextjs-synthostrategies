@@ -1,8 +1,7 @@
 "use client";
 
 import { useMessagesContext } from "@/context/messages-context";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Message } from "ai/react";
 
@@ -46,7 +45,7 @@ export default function BasicGPTChat() {
                         <p key={message.id + index} className="!mt-0">
                           {currentTextBlock}
                         </p>
-                      ); // "Cooper Codes is a YouTuber"
+                      );
                     }
                   })}
               </div>

@@ -42,7 +42,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] w-full bg-slate-900 text-slate-100">
+      <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] w-full bg-gradient-to-br from-slate-950 to-slate-800 text-slate-100">
         {emailSent === false ? (
           <>
             <motion.h1
@@ -105,7 +105,7 @@ export default function Contact() {
                 transition={{ duration: 0.25 }}
               >
                 <Button
-                  className="bg-blue-600 hover:bg-blue-700 w-[300px]"
+                  className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-950 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all w-[300px]"
                   type="submit"
                 >
                   Submit
@@ -182,7 +182,7 @@ export default function Contact() {
               transition={{ duration: 0.45 }}
             >
               <Button
-                className="bg-blue-600 hover:bg-blue-700 w-[300px] mt-5"
+                className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-950 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all mt-5"
                 onClick={handleRefresh}
               >
                 Contact Us

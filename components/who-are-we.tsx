@@ -44,7 +44,7 @@ export default function WhoAreWe() {
         transition={{ duration: 0.2 }}
       >
         <Link href="/contact">
-          <Button className="bg-blue-600 hover:bg-blue-700 mt-4">
+          <Button className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 mt-4 border-2 border-blue-950 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all">
             Contact Us Now!
           </Button>
         </Link>

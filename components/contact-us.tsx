@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactUs() {
   return (
-    <div className="p-10 flex flex-col items-center text-center bg-blue-300 w-full text-slate-900">
+    <div className="p-10 flex flex-col items-center text-center bg-gradient-to-b from-blue-400 to-blue-300 w-full text-slate-900 border-t-2 border-blue-950 shadow-top">
       <p className="text-xl">
         With a commitment to innovation and a track record of delivering
         measurable results, SynthoStrategies is your trusted partner for

@@ -15,7 +15,7 @@ export default function About() {
     <>
       <section
         id="about"
-        className="px-5 sm:px-[20%] py-5 bg-slate-900 text-slate-100"
+        className="px-5 sm:px-[20%] py-5 bg-gradient-to-br from-slate-950 to-slate-800 text-slate-100"
       >
         <motion.h1
           initial={{ x: -100, opacity: 0 }}
@@ -36,7 +36,7 @@ export default function About() {
             <Image
               src={cityscapesImage}
               alt="Image of cityscape"
-              className="w-[200px] mx-auto 2xl:mx-0"
+              className="w-[200px] mx-auto 2xl:mx-0 shadow-2xl border-2 border-white rounded-md"
             />
             <p>
               At SynthoStrategies, we are on a mission to revolutionize the way
@@ -72,7 +72,7 @@ export default function About() {
             <Image
               src={coolAiImage}
               alt="Image of cool AI"
-              className="w-[200px] mx-auto 2xl:mx-0"
+              className="w-[200px] mx-auto 2xl:mx-0 shadow-2xl border-2 border-white rounded-md"
             />
           </div>
         </motion.div>
@@ -158,7 +158,7 @@ export default function About() {
             success.
           </h3>
           <Link href="/contact" className="">
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-950 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all">
               Contact Us Now!
             </Button>
           </Link>

@@ -22,14 +22,14 @@ export default function MessengerIcon() {
       {isOpened ? (
         <>
           <XCircle
-            className="absolute top-1 right-6 z-10 w-12 h-12 text-white bg-black rounded-full p-2"
+            className="absolute top-1 right-6 z-10 w-12 h-12 text-white bg-gradient-to-br from-black to-slate-800 hover:from-slate-950 hover:to-slate-700 rounded-full p-2"
             onClick={() => setIsOpened(!isOpened)}
           />
           <BasicGPTChat />
         </>
       ) : (
         <MessageSquareText
-          className="w-12 h-12 text-white bg-black rounded-full p-2"
+          className="w-12 h-12 text-white bg-gradient-to-br from-black to-slate-800 hover:from-slate-950 hover:to-slate-700 rounded-full p-2 border-2 border-white"
           onClick={() => setIsOpened(!isOpened)}
         />
       )}
