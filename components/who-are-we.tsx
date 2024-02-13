@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 export default function WhoAreWe() {
   return (
-    <div className=" flex flex-col items-center py-3 px-8 lg:px-[20%] 2xl:py-[5rem] text-slate-100 w-full relative bg-slate-900 2xl:bg-transparent">
+    <div className=" flex flex-col items-center py-3 px-8 lg:px-[20%] 2xl:py-[5rem] text-slate-100 w-full relative bg-gradient-to-br from-slate-950 to-slate-800 2xl:from-transparent 2xl:to-transparent">
       <motion.h1
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
