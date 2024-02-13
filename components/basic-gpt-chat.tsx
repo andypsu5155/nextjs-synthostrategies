@@ -1,13 +1,22 @@
 "use client";
 
 import { useMessagesContext } from "@/context/messages-context";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Message } from "ai/react";
 
 export default function BasicGPTChat() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { messages, input, handleInputChange, handleSubmit } =
     useMessagesContext();
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   return (
     <>
@@ -51,6 +60,7 @@ export default function BasicGPTChat() {
               </div>
             );
           })}
+          <div ref={messagesEndRef} />
         </div>
 
         <div
@@ -60,10 +70,20 @@ export default function BasicGPTChat() {
           <form className="flex flex-col gap-2 p-2" onSubmit={handleSubmit}>
             <textarea
               className="grow resize-none rounded-md border-2 
-                       border-gray-400 p-2 focus:border-blue-600 
+                         border-gray-400 p-2 focus:border-blue-600 
                          focus:outline-none"
               value={input}
               onChange={handleInputChange}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" && !event.shiftKey) {
+                  event.preventDefault();
+                  const formEvent = new Event("submit", {
+                    bubbles: true,
+                    cancelable: true,
+                  });
+                  event.currentTarget.form?.dispatchEvent(formEvent);
+                }
+              }}
               placeholder="Enter a message..."
             />
 

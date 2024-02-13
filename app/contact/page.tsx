@@ -105,7 +105,7 @@ export default function Contact() {
                 transition={{ duration: 0.25 }}
               >
                 <Button
-                  className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-950 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all w-[300px]"
+                  className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-100 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all w-[300px]"
                   type="submit"
                 >
                   Submit
@@ -182,7 +182,7 @@ export default function Contact() {
               transition={{ duration: 0.45 }}
             >
               <Button
-                className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-950 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all mt-5"
+                className="bg-gradient-to-br from-blue-800 to-blue-600 hover:from-blue-950 hover:to-blue-800 border-2 border-blue-100 shadow-2xl text-white text-lg px-12 py-6 rounded-2xl transition-all mt-5"
                 onClick={handleRefresh}
               >
                 Contact Us
