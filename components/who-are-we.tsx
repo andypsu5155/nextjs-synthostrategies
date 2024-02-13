@@ -53,7 +53,7 @@ export default function WhoAreWe() {
       <Image
         src={image1}
         alt=""
-        className="w-[50%] mx-auto mt-5 2xl:mt-0 2xl:w-full 2xl:absolute 2xl:top-0 2xl:left-0 2xl:h-[60vh] 2xl:object-cover 2xl:-z-10 2xl:brightness-[30%]"
+        className="w-[50%] mx-auto mt-5 shadow-2xl border-2 border-white rounded-md 2xl:border-none 2xl:shadow-none 2xl:rounded-none 2xl:mt-0 2xl:w-full 2xl:absolute 2xl:top-0 2xl:left-0 2xl:h-[60vh] 2xl:object-cover 2xl:-z-10 2xl:brightness-[30%]"
       />
     </div>
   );

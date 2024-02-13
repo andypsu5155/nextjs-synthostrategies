@@ -41,7 +41,11 @@ export default function WhatWeDo() {
         transition={{ duration: 0.3 }}
         className="w-[50%] 2xl:w-[12%] mx-auto mt-5"
       >
-        <Image src={image2} alt="" />
+        <Image
+          src={image2}
+          alt=""
+          className="shadow-2xl border-2 border-white rounded-md"
+        />
       </motion.div>
 
       <Carousel className="w-[90%] mx-auto mt-5">
