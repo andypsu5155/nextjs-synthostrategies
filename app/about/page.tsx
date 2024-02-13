@@ -15,7 +15,7 @@ export default function About() {
     <>
       <section
         id="about"
-        className="px-5 sm:px-[20%] py-5 bg-gradient-to-br from-slate-950 to-slate-800 text-slate-100"
+        className="px-5 sm:px-[20%] py-5 bg-gradient-to-br from-slate-950 to-slate-700 text-slate-100"
       >
         <motion.h1
           initial={{ x: -100, opacity: 0 }}

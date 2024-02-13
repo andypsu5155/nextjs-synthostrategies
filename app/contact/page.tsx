@@ -42,7 +42,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] w-full bg-gradient-to-br from-slate-950 to-slate-800 text-slate-100">
+      <section className="px-5 sm:px-[20%] py-5 sm:py-[10%] w-full bg-gradient-to-br from-slate-950 to-slate-700 text-slate-100">
         {emailSent === false ? (
           <>
             <motion.h1

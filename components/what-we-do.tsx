@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 
 export default function WhatWeDo() {
   return (
-    <div className="p-10 flex flex-col items-center w-full relative text-white bg-gradient-to-br from-black to-slate-950">
+    <div className="p-10 flex flex-col items-center w-full relative text-white bg-gradient-to-br from-black to-slate-800">
       <motion.h1
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
