@@ -30,7 +30,7 @@ export default function BasicGPTChat() {
           </h1>
         </div>
 
-        <div className="overflow-y-scroll h-[70%] sm:h-[75%]">
+        <div className="overflow-y-scroll h-[70%] sm:h-[75%] bg-white bg-opacity-50 border-2 border-slate-600 rounded-xl p-5 custom-scrollbar">
           {messages.map((message: Message) => {
             return (
               <div key={message.id}>
