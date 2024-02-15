@@ -26,6 +26,7 @@ export default function RootLayout({
           <MessagesProvider>{children}</MessagesProvider>
         </main>
         <Script
+          id="voiceflow-script"
           strategy="afterInteractive" // Ensures the script is loaded after the page becomes interactive
           dangerouslySetInnerHTML={{
             __html: `
