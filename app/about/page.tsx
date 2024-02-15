@@ -165,7 +165,6 @@ export default function About() {
         </motion.div>
       </section>
       <ContactUs />
-      <MessengerIcon />
     </>
   );
 }

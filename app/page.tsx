@@ -10,7 +10,6 @@ export default function Home() {
       <WhoAreWe />
       <WhatWeDo />
       <ContactUs />
-      <MessengerIcon />
     </>
   );
 }

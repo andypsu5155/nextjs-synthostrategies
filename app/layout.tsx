@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import LogoNavbar from "@/components/logo-navbar";
 import { MessagesProvider } from "@/context/messages-context";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,24 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col items-center">
           <MessagesProvider>{children}</MessagesProvider>
         </main>
+        <Script
+          strategy="afterInteractive" // Ensures the script is loaded after the page becomes interactive
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(d, t) {
+              var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+              v.onload = function() {
+                window.voiceflow.chat.load({
+                  verify: { projectID: '65cbe297bb47578acb29a5f9' },
+                  url: 'https://general-runtime.voiceflow.com',
+                  versionID: 'production'
+                });
+              }
+              v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+          `,
+          }}
+        />
       </body>
     </html>
   );

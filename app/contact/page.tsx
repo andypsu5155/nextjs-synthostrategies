@@ -192,7 +192,6 @@ export default function Contact() {
         )}
       </section>
       <ContactUs />
-      <MessengerIcon />
     </>
   );
 }
